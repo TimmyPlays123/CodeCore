@@ -1,1 +1,101 @@
+local MacLib = loadstring(game:HttpGet("https://github.com/biggaboy212/Maclib/releases/latest/download/maclib.txt"))()
 
+local MainwindowWidth = workspace.CurrentCamera.ViewportSize.X / 1.75
+local MainwindowHeight = workspace.CurrentCamera.ViewportSize.Y / 1.75
+
+local Player = game.Players.LocalPlayer
+
+local MainWindow = MacLib:Window({
+    Title = "CodeCore.xyz",
+    Subtitle = "Free Pixel Prisons Script",
+    Size = UDim2.fromOffset(MainwindowWidth, MainwindowHeight),
+    DragStyle = 2,
+    ShowUserInfo = true,
+    Keybind = Enum.KeyCode.RightShift,
+    AcrylicBlur = false,
+})
+
+local MainTabGroup = MainWindow:TabGroup()
+local MiscTabGroup = MainWindow:TabGroup()
+
+local MainTab = MainTabGroup:Tab({
+    Name = "Main",
+    Image = "",
+})
+
+local MiscTab = MiscTabGroup:Tab({
+    Name = "Misc",
+    Image = "",
+})
+
+local GamePassSection = MiscTab:Section({
+    Side = "Right"
+})
+
+GamePassSection:Header({
+    Text = "Gamepasses"
+  }, "Gamepass_Header")
+
+GamePassSection:Toggle({
+    Name = "VIP",
+    Default = false,
+    Callback = function(Value)
+        Player.Gamepasses.VIP.Value = Value
+    end,
+}, "GamePass_VIP")
+
+GamePassSection:Toggle({
+    Name = "x3 Eggs",
+    Default = false,
+    Callback = function(Value)
+        Player.Gamepasses["x3 Eggs"].Value = Value
+    end,
+}, "GamePass_x3_Eggs")
+
+GamePassSection:Toggle({
+    Name = "x8 Eggs",
+    Default = false,
+    Callback = function(Value)
+        Player.Gamepasses["x8 Eggs"].Value = Value
+    end,
+}, "GamePass_x8_Eggs")
+
+GamePassSection:Toggle({
+    Name = "Extreme Luck",
+    Default = false,
+    Callback = function(Value)
+        Player.Gamepasses["Extreme Luck"].Value = Value
+    end,
+}, "GamePass_Extreme_Luck")
+
+GamePassSection:Toggle({
+    Name = "Auto Hatch",
+    Default = false,
+    Callback = function(Value)
+        Player.Gamepasses["Auto Hatch"].Value = Value
+    end,
+}, "GamePass_Auto_Hatch")
+
+GamePassSection:Toggle({
+    Name = "Auto Sell",
+    Default = false,
+    Callback = function(Value)
+        Player.Gamepasses["Auto Sell"].Value = Value
+    end,
+}, "GamePass_Auto_Sell")
+
+GamePassSection:Toggle({
+    Name = "Auto Shard Open",
+    Default = false,
+    Callback = function(Value)
+        Player.Gamepasses["Auto Shard Open"].Value = Value
+    end,
+}, "GamePass_Auto_Shard_Open")
+
+GamePassSection:Toggle({
+    Name = "Teleporter",
+    Default = false,
+    Callback = function(Value)
+        Player.Gamepasses["Teleporter"].Value = Value
+    end,
+}, "GamePass_Teleporter")
