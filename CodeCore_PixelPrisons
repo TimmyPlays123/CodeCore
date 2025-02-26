@@ -99,3 +99,7 @@ GamePassSection:Toggle({
         Player.Gamepasses["Teleporter"].Value = Value
     end,
 }, "GamePass_Teleporter")
+
+GamePassSection:Label({
+    Text = "DISCLAIMER: Not all gamepasses are listed as they don't work.",
+}, "Gamepass_Label")
